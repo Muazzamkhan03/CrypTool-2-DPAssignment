@@ -2248,7 +2248,6 @@ namespace CrypTool.CrypWin
             }
             return editor;
         }
-
         private void MainWindow_TemplateLoaded(object sender, TemplateOpenEventArgs e)
         {
             IEditor editor = OpenEditor(e.Type, e.Info);

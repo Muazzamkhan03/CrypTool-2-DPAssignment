@@ -1,19 +1,4 @@
-﻿/*                              
-   Copyright 2023 Nils Kopal, CrypTool Project
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
-*/
-using CrypTool.PluginBase;
+﻿using CrypTool.PluginBase;
 using CrypTool.PluginBase.Miscellaneous;
 using System.ComponentModel;
 using System.Text;
@@ -21,7 +6,6 @@ using System.Windows.Controls;
 
 namespace CrypTool.Plugins.AffineCipher
 {
-    [Author("Nils Kopal", "nils.kopal@cryptool.org", "CrypTool 2 Team", "https://www.cryptool.org")]
     [PluginInfo("CrypTool.Plugins.AffineCipher.Properties.Resources", "PluginCaption", "PluginTooltip", "AffineCipher/userdoc.xml", new[] { "AffineCipher/icon.png" })]
     [ComponentCategory(ComponentCategory.CiphersClassic)]
     public class AffineCipher : ICrypComponent
@@ -148,7 +132,7 @@ namespace CrypTool.Plugins.AffineCipher
         /// <param name="a"></param>
         /// <param name="b"></param>
         private void Encrypt(int a, int b)
-        {            
+        {
             int result = GCDExtendedIterative(Alphabet.Length, a, out int inverse);
             if (result != 1) //no inverse exists
             {
@@ -159,7 +143,7 @@ namespace CrypTool.Plugins.AffineCipher
             StringBuilder stringBuilder = new StringBuilder();
 
             int percent = InputText.Length / 100;
-            if(percent == 0)
+            if (percent == 0)
             {
                 percent = 1;
             }
@@ -204,7 +188,7 @@ namespace CrypTool.Plugins.AffineCipher
                         return;
                     }
                     ProgressChanged(stringBuilder.Length, InputText.Length);
-                }                
+                }
             }
             OutputText = stringBuilder.ToString();
             OnPropertyChanged(nameof(OutputText));
@@ -216,7 +200,7 @@ namespace CrypTool.Plugins.AffineCipher
         /// <param name="a"></param>
         /// <param name="b"></param>
         private void Decrypt(int a, int b)
-        {                       
+        {
             int result = GCDExtendedIterative(Alphabet.Length, a, out int inverse);
             if (result != 1) //no inverse exists
             {
@@ -227,7 +211,7 @@ namespace CrypTool.Plugins.AffineCipher
             StringBuilder builder = new StringBuilder();
 
             int percent = InputText.Length / 100;
-            if(percent == 0)
+            if (percent == 0)
             {
                 percent = 1;
             }
@@ -277,7 +261,7 @@ namespace CrypTool.Plugins.AffineCipher
             OutputText = builder.ToString();
             OnPropertyChanged(nameof(OutputText));
         }
-        
+
         public void PostExecution()
         {
         }
