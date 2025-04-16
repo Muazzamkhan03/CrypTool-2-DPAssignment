@@ -40,6 +40,7 @@ using WorkspaceManager.Properties;
 using WorkspaceManager.View.Base;
 using WorkspaceManager.View.VisualComponents.CryptoLineView;
 using WorkspaceManager.View.Visuals;
+using WorkspaceManagerModel.Model.Interfaces;
 using WorkspaceManagerModel.Model.Operations;
 
 //Disable warnings for unused or unassigned fields and events:
@@ -59,6 +60,9 @@ namespace WorkspaceManager
         public event FileLoadedHandler OnFileLoaded;
         public event EventHandler<LoadingErrorEventArgs> LoadingErrorOccurred;
         public event EventHandler PasteOccured;
+
+        //fabrication
+        private List<IUpdateableView> views = new List<IUpdateableView>();
 
         /// <summary>
         /// Create a new Instance of the Editor
@@ -132,6 +136,28 @@ namespace WorkspaceManager
         }
 
         public event EventHandler executeEvent;     //Event for BinSettingsVisual to notice when executing, to disable settings that may not be changed during execution       
+
+
+        //fabrication
+        public void addView(IUpdateableView v)
+        {
+            views.Add(v);
+        }
+
+        public void removeView(IUpdateableView v)
+        {
+            views.Remove(v);
+        }
+
+        public void GUINotificationOccurred()
+        {
+            foreach (var view in views)
+            {
+                //Other logic...
+                view.updateStatus();
+                //Other logic...
+            }
+        }
 
         #region IEditor Members
 
@@ -981,6 +1007,9 @@ namespace WorkspaceManager
             {
                 return;
             }
+
+            //fabrication
+            GUINotificationOccurred();
 
             //Check if the logging event is Warning or Error and set the State of the PluginModel to
             //the corresponding PluginModelState

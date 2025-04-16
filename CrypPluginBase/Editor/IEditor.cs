@@ -27,6 +27,8 @@ namespace CrypTool.PluginBase.Editor
         event OpenEditorHandler OnOpenEditor;
         event FileLoadedHandler OnFileLoaded;
 
+        
+
         void New();
         void Open(string fileName);
         void Save(string fileName);

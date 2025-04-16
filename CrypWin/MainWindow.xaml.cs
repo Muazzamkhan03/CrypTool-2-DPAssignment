@@ -78,6 +78,9 @@ namespace CrypTool.CrypWin
     [CrypTool.PluginBase.Attributes.Localization("CrypTool.CrypWin.Properties.Resources")]
     public partial class MainWindow : DevComponents.WpfRibbon.RibbonWindow
     {
+        //fabrication
+        private IEditor editor;
+
         #region private variables
         private readonly List<NotificationLevel> listFilter = new List<NotificationLevel>();
         private readonly ObservableCollection<LogMessage> collectionLogMessages = new ObservableCollection<LogMessage>();

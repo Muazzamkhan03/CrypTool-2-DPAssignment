@@ -21,6 +21,7 @@ using System.IO.Compression;
 using System.Reflection;
 using System.Xml;
 
+
 namespace CrypTool.Core
 {
     /// <summary>
@@ -29,6 +30,9 @@ namespace CrypTool.Core
     public class PluginManager
     {
         private readonly HashSet<string> disabledAssemblies = new HashSet<string>();
+
+        //fabrication
+        private readonly Dictionary<string, Type> availableStrategies = new Dictionary<string, Type>();
 
         /// <summary>
         /// Counter for the dll files that were found
@@ -109,6 +113,34 @@ namespace CrypTool.Core
             crypPluginsFolder = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), PluginDirectory);
             loadedAssemblies = new Dictionary<string, Assembly>();
             loadedTypes = new Dictionary<string, Type>();
+        }
+
+        //fabrication
+        private void LoadPlugins()
+        {
+            string pluginDirectory = "CrypPlugins"; // Where plugins (encryption algorithms) are stored
+
+            foreach (string dll in Directory.GetFiles(pluginDirectory, "*.dll"))
+            {
+                Assembly assembly = Assembly.LoadFrom(dll);
+                foreach (Type type in assembly.GetTypes())
+                {
+                    if (typeof(ICryppComponent).IsAssignableFrom(type) && !type.IsInterface)
+                    {
+                        availableStrategies[type.Name] = type;
+                    }
+                }
+            }
+        }
+
+        //fabrication
+        public ICryppComponent GetStrategy(string strategyName)
+        {
+            if (availableStrategies.ContainsKey(strategyName))
+            {
+                return (ICryppComponent)Activator.CreateInstance(availableStrategies[strategyName]);
+            }
+            return null;
         }
 
         /// <summary>

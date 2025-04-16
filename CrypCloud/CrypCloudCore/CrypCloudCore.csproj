@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CloudComponent\ACloudCompatible.cs" />
+    <Compile Include="CloudComponent\BasicCloudComponent.cs" />
+    <Compile Include="CloudComponent\EncryptedCloudComponent.cs" />
+    <Compile Include="CloudComponent\ParallelCloudComponent.cs" />
     <Compile Include="CrypCloudCore.cs" />
     <Compile Include="CloudComponent\ACloudComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
