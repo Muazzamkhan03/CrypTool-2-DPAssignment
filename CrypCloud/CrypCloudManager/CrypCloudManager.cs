@@ -170,6 +170,11 @@ namespace CrypCloud.Manager
             throw new NotImplementedException();
         }
 
+        public void SelectAlgorithm(string name)
+        {
+
+        }
+
         public void Save(string fileName)
         {
             GuiLogMessage("CryptCloudManager: Save(" + fileName + ")", NotificationLevel.Debug);

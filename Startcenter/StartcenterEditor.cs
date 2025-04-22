@@ -172,5 +172,10 @@ namespace Startcenter
         {
             //do nothing
         }
+
+        public void SelectAlgorithm(string name)
+        {
+
+        }
     }
 }

@@ -178,6 +178,10 @@ namespace Wizard
             throw new NotImplementedException();
         }
 
+        public void SelectAlgorithm(string name)
+        {
+
+        }
 
         public void ShowSelectedEntityHelp()
         {

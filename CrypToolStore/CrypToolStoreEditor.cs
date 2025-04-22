@@ -66,6 +66,10 @@ namespace CrypTool.CrypToolStore
             EventsHelper.GuiLogMessage(OnGuiLogNotificationOccured, this, new GuiLogEventArgs(message, this, logLevel));
         }
 
+        public void SelectAlgorithm(string name)
+        {
+
+        }
 
         #region unused methods
 

@@ -135,6 +135,11 @@ namespace WorkspaceManager
             return executing;
         }
 
+        public void SelectAlgorithm(string name)
+        {
+
+        }
+
         public event EventHandler executeEvent;     //Event for BinSettingsVisual to notice when executing, to disable settings that may not be changed during execution       
 
 

@@ -81,6 +81,15 @@ namespace CrypTool.CrypWin
         //fabrication
         private IEditor editor;
 
+        private void AlgoClicked(object sender, EventArgs e)
+        {
+            if (sender is Button button && button.Tag is string algoName)
+            {
+                editor.SelectAlgorithm(algoName);
+                editor.Execute();
+            }
+        }
+
         #region private variables
         private readonly List<NotificationLevel> listFilter = new List<NotificationLevel>();
         private readonly ObservableCollection<LogMessage> collectionLogMessages = new ObservableCollection<LogMessage>();
