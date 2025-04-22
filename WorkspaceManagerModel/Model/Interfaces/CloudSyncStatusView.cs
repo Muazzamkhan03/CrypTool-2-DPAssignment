@@ -10,12 +10,12 @@ namespace WorkspaceManagerModel.Model.Interfaces
     {
         // **** Displays cloud upload/download status based on component updates. *****
 
-        public void update()
+        public void update(IEditor state)
         {
             // Will have the relevant implementation.
         }
 
-        public void updateStatus()
+        public void updateStatus(IEditor state)
         {
             // Will have the relevant implementation.
         }

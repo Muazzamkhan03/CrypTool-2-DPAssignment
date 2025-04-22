@@ -10,12 +10,12 @@ namespace WorkspaceManagerModel.Model.Interfaces
     {
         // ***** Calculates and visualizes execution time, CPU, and memory usage. *****
 
-        public void update()
+        public void update(IEditor state)
         {
             // Will have the relevant implementation.
         }
 
-        public void updateStatus()
+        public void updateStatus(IEditor state)
         {
             // Will have the relevant implementation.
         }

@@ -10,12 +10,12 @@ namespace WorkspaceManagerModel.Model.Interfaces
     {
         // ***** Receives notifications and appends to the live log panel. *****
 
-        public void update()
+        public void update(IEditor state)
         {
             // Will have the relevant implementation.
         }
 
-        public void updateStatus()
+        public void updateStatus(IEditor state)
         {
             // Will have the relevant implementation.
         }
