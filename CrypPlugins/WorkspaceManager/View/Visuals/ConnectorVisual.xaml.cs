@@ -13,6 +13,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
+using CrypTool.PluginBase.Editor;
 using System;
 using System.ComponentModel;
 using System.Globalization;
@@ -333,12 +334,12 @@ namespace WorkspaceManager.View.Visuals
 
         public bool CanConnect => throw new NotImplementedException();
 
-        public void update()
+        public void update(IEditor state)
         {
 
         }
 
-        public void updateStatus()
+        public void updateStatus(IEditor state)
         {
 
         }

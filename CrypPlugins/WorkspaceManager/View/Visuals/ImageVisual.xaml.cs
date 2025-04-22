@@ -13,6 +13,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
+using CrypTool.PluginBase.Editor;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -172,12 +173,12 @@ namespace WorkspaceManager.View.Visuals
         }
         #endregion
 
-        public void update()
+        public void update(IEditor state)
         {
 
         }
 
-        public void updateStatus()
+        public void updateStatus(IEditor state)
         {
 
         }

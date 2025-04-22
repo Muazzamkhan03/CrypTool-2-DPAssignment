@@ -263,7 +263,7 @@ namespace WorkspaceManager.Execution
                 {
                     foreach (IUpdateableView view in views)
                     {
-                        view.update();
+                        view.update(Editor);
                     }
                 }, null);
             }

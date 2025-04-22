@@ -28,6 +28,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 using CrypTool.PluginBase;
+using CrypTool.PluginBase.Editor;
 using OnlineDocumentationGenerator.Generators.HtmlGenerator;
 using WorkspaceManager.Model;
 using WorkspaceManager.View.Base;
@@ -543,13 +544,13 @@ typeof(SolidColorBrush), typeof(ComponentVisual), new FrameworkPropertyMetadata(
             return default(Point);
         }
 
-        public void update()
+        public void update(IEditor state)
         {
             Progress = Model.PercentageFinished;
 
         }
 
-        public void updateStatus()
+        public void updateStatus(IEditor state)
         {
             AddPresentationElement(BinComponentState.Min, Model.getImage());
             OnPropertyChanged("ActivePresentation");
