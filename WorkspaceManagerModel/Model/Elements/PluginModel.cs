@@ -354,7 +354,7 @@ namespace WorkspaceManager.Model
                 {
                     WorkspaceModel.MyEditor.Presentation.Dispatcher.Invoke(DispatcherPriority.Normal, (SendOrPostCallback)delegate
                     {
-                        UpdateableView.updateStatus();
+                        UpdateableView.updateStatus(WorkspaceModel.MyEditor);
                     }, null);
                 }
             }

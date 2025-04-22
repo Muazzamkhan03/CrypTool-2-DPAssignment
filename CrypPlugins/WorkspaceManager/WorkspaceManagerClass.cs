@@ -154,7 +154,7 @@ namespace WorkspaceManager
             foreach (var view in views)
             {
                 //Other logic...
-                view.updateStatus();
+                view.updateStatus(this);
                 //Other logic...
             }
         }
@@ -1024,7 +1024,7 @@ namespace WorkspaceManager
                         {
                             if (pluginModel.UpdateableView != null)
                             {
-                                pluginModel.UpdateableView.updateStatus();
+                                pluginModel.UpdateableView.updateStatus(this);
                             }
                         }, null);
                         break;
@@ -1043,7 +1043,7 @@ namespace WorkspaceManager
                         {
                             if (pluginModel.UpdateableView != null)
                             {
-                                pluginModel.UpdateableView.updateStatus();
+                                pluginModel.UpdateableView.updateStatus(this);
                             }
                         }, null);
                         break;

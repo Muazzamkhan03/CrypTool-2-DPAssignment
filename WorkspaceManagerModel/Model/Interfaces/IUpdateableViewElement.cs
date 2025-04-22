@@ -14,11 +14,13 @@
    limitations under the License.
 */
 
+using CrypTool.PluginBase.Editor;
+
 namespace WorkspaceManagerModel.Model.Interfaces
 {
     public interface IUpdateableView
     {
-        void update();
-        void updateStatus();
+        void update(IEditor state);
+        void updateStatus(IEditor state);
     }
 }

@@ -1616,12 +1616,12 @@ namespace WorkspaceManager.View.Visuals
             }
         }
 
-        public void update()
+        public void update(IEditor state)
         {
 
         }
 
-        public void updateStatus()
+        public void updateStatus(IEditor state)
         {
 
         }

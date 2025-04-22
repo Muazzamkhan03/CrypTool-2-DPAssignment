@@ -191,12 +191,12 @@ namespace WorkspaceManager.View.VisualComponents.CryptoLineView
         }
         #endregion
         #region Public
-        public void update()
+        public void update(IEditor state)
         {
-            Line.update();
+            Line.update(state);
         }
 
-        public void updateStatus()
+        public void updateStatus(IEditor state)
         {
 
         }
@@ -1143,8 +1143,8 @@ namespace WorkspaceManager.View.VisualComponents.CryptoLineView
         }
         #endregion
         #region IUpdateableView Members
-
-        public void update()
+        
+        public void update(IEditor state)
         {
             if (Model.Active)
             {
@@ -1165,7 +1165,7 @@ namespace WorkspaceManager.View.VisualComponents.CryptoLineView
             }
         }
 
-        public void updateStatus()
+        public void updateStatus(IEditor state)
         {
 
         }
@@ -1180,6 +1180,7 @@ namespace WorkspaceManager.View.VisualComponents.CryptoLineView
             InvalidateMeasure();
             UpdateLayout();
         }
+
 
         #endregion
     }
